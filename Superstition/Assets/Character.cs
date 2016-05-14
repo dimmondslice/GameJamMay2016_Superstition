@@ -46,6 +46,9 @@ public class Character : MonoBehaviour
 		}
 		else if (other.gameObject.tag == "DangerZone")
 		{
+			GetComponentInChildren<Animation>().Play("SwingNoRootMotion");
+			other.gameObject.AddComponent<Rigidbody>();
+
 			gm.GameOver();
 		}
 	}
