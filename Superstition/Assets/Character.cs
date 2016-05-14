@@ -40,7 +40,7 @@ public class Character : MonoBehaviour
 			Invoke("GrabItem", .5f);
 		}
 		//if you hit an endzone and it's not your endzone
-		else if (other.gameObject.GetComponent<EndZone>() && gm.roundNumber % 2 != other.gameObject.GetComponent<EndZone>().playerNum )
+		else if (other.gameObject.GetComponent<EndZone>() && gm.roundNumber % 2 != other.gameObject.GetComponent<EndZone>().playerNum && LastCollidedWithItem != null)
 		{
 			gm.NextRound();
 		}
