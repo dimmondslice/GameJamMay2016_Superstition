@@ -22,7 +22,7 @@ public class BezierCurveMesh : MonoBehaviour
 	private MeshFilter filt;
 
 	private float timeToAddOPoint;
-	private float addPointRate = .15f;
+	private float addPointRate = .2f;
 
 	// so the handles go away in playmode
 	public void Awake()
@@ -31,6 +31,8 @@ public class BezierCurveMesh : MonoBehaviour
 		ex = new ExtrudeShape(meshToExtrude);
 		col = GetComponent<MeshCollider>();
 		filt = GetComponent<MeshFilter>();
+
+		path.Add(new OrientedPoint(transform.position, transform.rotation));
 	}
 
     void Update()
